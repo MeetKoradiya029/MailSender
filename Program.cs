@@ -32,7 +32,7 @@ static KeyValuePair<bool, string> SendMail(
 			var smtp = new SmtpClient
 			{
 				Host = strHost,
-				Port = 587,
+				Port = 587, // Port 587 for TLS, or 465 for SSL
 				EnableSsl = true,
 				UseDefaultCredentials = false,
 				Credentials = new NetworkCredential(stremailFrom, strpassword),
@@ -51,14 +51,14 @@ static KeyValuePair<bool, string> SendMail(
 }
 
 // Email details
-string emailFrom = "hpatel.datasos@gmail.com";
-string password = "paqo gknp esod tzmk";
+string emailFrom = "mr.dark1006@gmail.com";
+string password = "your-app-password";
 string host = "smtp.gmail.com";
-string fromDisplayName = "Harsh Patel";
+string fromDisplayName = "Meet Koradiya";
 string todaydate = DateTime.Now.ToString("yyyy-MM-dd");
 string subject = $" Search Results - {todaydate}";
-string body = $"<h2>For 10  data is updated in the table. Please review and update the BBL in the AM.</h2>";
-string emailTo = "mkoradiya.datasos@gmail.com";
+string body = $"<h2>For 10  data is updated in the table. Please review and update the contacts in the Data.</h2>";
+string emailTo = "koradiyameet029@gmail.com";
 
 KeyValuePair<bool, string> result = SendMail(emailFrom, password, host, fromDisplayName, subject, body, emailTo);
 
